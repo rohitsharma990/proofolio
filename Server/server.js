@@ -11,6 +11,9 @@ app.use(express.json());
 const authRoutes = require("./routes/authRoutes");
 const dbConnect = require("./config/db.js");
 const githubRoutes = require("./routes/githubRoutes");
+const aiRoutes = require("./routes/aiRoutes");
+
+
 
 
 // Connect to MongoDB
@@ -18,7 +21,7 @@ dbConnect();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/github", githubRoutes);
-
+app.use("/api/ai", aiRoutes);
 
 app.get("/", (req, res) => {
     res.json({
